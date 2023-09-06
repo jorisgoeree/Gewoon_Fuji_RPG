@@ -1,153 +1,139 @@
 # Gewoon_Fuji_RPG
 CMI INF11B - Gewoon Fuji - Mini Project RPG Game
 
----------------------------------[FILES]---------------------------------
+## Files
 
+### Program.CS
 
--------------- Program.CS -------------- 
+#### Classes
 
------ [Classes] -----
+##### Program
 
--- Program --
-
-// Fields
+**Fields:**
 - n.v.t.
 
-// Methods
+**Methods:**
 - Main
 
+### Player.CS
 
+#### Classes
 
+##### Player
 
--------------- Player.CS --------------
-
------ [Classes] -----
-
--- Player --
-
-// Fields
+**Fields:**
 - CurrentHitPoints
 - CurrentLocation
 - CurrentWeapon
 - MaximumHitPoints
 - Name
 
-// Methods
-- 
+**Methods:**
+- (No methods listed)
 
+### Monster.CS
 
+#### Classes
 
+##### Monster
 
--------------- Monster.CS -------------- 
-
------ [Classes] -----
-
--- Monster --
-
-// Fields
+**Fields:**
 - CurrentHitPoints
 - ID
 - MaximumDamage
 - MaximumHitPoints
 - Name
 
-// Methods
-- 
+**Methods:**
+- (No methods listed)
 
+### World.CS
 
+#### Classes
 
+##### World
 
--------------- World.CS --------------
+**Fields:**
+- (No fields listed)
 
------ [Classes] -----
+**Methods:**
+- `PopulateWeapons`
+    - **Short Description:** Populates weapons.
+    - **Parameters:** None
+    - **Return:** void
 
--- World --
+- `PopulateMonsters`
+    - **Short Description:** Populates monsters.
+    - **Parameters:** None
+    - **Return:** void
 
-// Fields
-- 
+- `PopulateQuests`
+    - **Short Description:** Populates quests.
+    - **Parameters:** None
+    - **Return:** void
 
-// Methods
-- PopulateWeapons
-    [SHORT DESCRIPTION]
-    parameters: -
-    return: void
+- `PopulateLocations`
+    - **Short Description:** Populates locations.
+    - **Parameters:** None
+    - **Return:** void
 
-- PopulateMonsters
-    [SHORT DESCRIPTION]
-    parameters: -
-    return: void
+- `LocationByID`
+    - **Short Description:** Get a location by ID.
+    - **Parameters:** `int id`
+    - **Return:** `Location` (class instance) or null if not found
 
-- PopulateQuests
-    [SHORT DESCRIPTION]
-    parameters: -
-    return: void
+- `WeaponByID`
+    - **Short Description:** Get a weapon by ID.
+    - **Parameters:** `int id`
+    - **Return:** `Weapon` (class instance) or null if not found
 
-- PopulateLocations
-    [SHORT DESCRIPTION]
-    parameters: -
-    return: void
+- `MonsterByID`
+    - **Short Description:** Get a monster by ID.
+    - **Parameters:** `int id`
+    - **Return:** `Monster` (class instance) or null if not found
 
-- LocationByID
-    [SHORT DESCRIPTION]
-    parameters: int id
-    return: Location (class instance) or null if not found
+- `QuestByID`
+    - **Short Description:** Get a quest by ID.
+    - **Parameters:** `int id`
+    - **Return:** `Quest` (class instance) or null if not found
 
-- WeaponByID
-    [SHORT DESCRIPTION]
-    parameters: int id
-    return: Weapon (class instance) or null if not found
+### Quest.CS
 
-- MonsterByID
-    [SHORT DESCRIPTION]
-    parameters: int id
-    return: Monster (class instance) or null if not found
+#### Classes
 
-- QuestByID
-    [SHORT DESCRIPTION]
-    parameters: int id
-    return: Quest (class instance) or null if not found
+##### Quest
 
--------------- Quest.CS -------------- 
-
------ [Classes] -----
-
--- Quest --
-
-// Fields
+**Fields:**
 - Description
 - ID
 - Name
 
-// Methods
-- 
+**Methods:**
+- (No methods listed)
 
+### SuperAdventure.CS
 
+#### Classes
 
+##### SuperAdventure
 
--------------- SuperAdventure.CS --------------
-
------ [Classes] -----
-
--- SuperAdventure --
-
-// Fields
+**Fields:**
 - CurrentMonster
 - ThePlayer
 
-// Methods
-- 
+**Methods:**
+- (No methods listed)
 
+### Weapon.CS
 
+#### Classes
 
+##### Weapon
 
--------------- Weapon.CS -------------- 
-
------ [Classes] -----
-
-// Fields
+**Fields:**
 - ID
 - MaximumDamage
 - Name
 
-// Methods
-- 
+**Methods:**
+- (No methods listed)
