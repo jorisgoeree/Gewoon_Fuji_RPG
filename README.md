@@ -3,6 +3,7 @@ CMI INF11B - Gewoon Fuji - Mini Project RPG Game
 
 ## Files
 
+
 ### Program.CS
 
 #### Classes
@@ -14,6 +15,8 @@ CMI INF11B - Gewoon Fuji - Mini Project RPG Game
 
 **Methods:**
 - Main
+
+
 
 ### Player.CS
 
@@ -29,7 +32,15 @@ CMI INF11B - Gewoon Fuji - Mini Project RPG Game
 - Name
 
 **Methods:**
-- (No methods listed)
+- `Attack`
+    - **Description:** Attacks a monster, damage is chance based, calculated based on CurrentWeapon.MaximumDamage with a chance to miss
+    - **Parameters:** `Monster` (class instance)
+    - **Return:** `int DamageDealt`
+- `Move`
+    - **Description:** Moves the player if chosen direction is valid
+    - **Parameters:** string directionChoice (?? Not sure yet)
+    - **Return:** `Location` (?? Not sure yet)
+
 
 ### Monster.CS
 
@@ -45,7 +56,12 @@ CMI INF11B - Gewoon Fuji - Mini Project RPG Game
 - Name
 
 **Methods:**
-- (No methods listed)
+- `Attack`
+    - **Description:** Attacks the player, damage is chance based, from miss to MaximumDamage
+    - **Parameters:** `Player` (class instance)
+    - **Return:** `int DamageDealt`
+
+
 
 ### World.CS
 
@@ -58,44 +74,46 @@ CMI INF11B - Gewoon Fuji - Mini Project RPG Game
 
 **Methods:**
 - `PopulateWeapons`
-    - **Short Description:** Populates weapons.
+    - **Description:** Populates weapons.
     - **Parameters:** None
     - **Return:** void
 
 - `PopulateMonsters`
-    - **Short Description:** Populates monsters.
+    - **Description:** Populates monsters.
     - **Parameters:** None
     - **Return:** void
 
 - `PopulateQuests`
-    - **Short Description:** Populates quests.
+    - **Description:** Populates quests.
     - **Parameters:** None
     - **Return:** void
 
 - `PopulateLocations`
-    - **Short Description:** Populates locations.
+    - **Description:** Populates locations.
     - **Parameters:** None
     - **Return:** void
 
 - `LocationByID`
-    - **Short Description:** Get a location by ID.
+    - **Description:** Get a location by ID.
     - **Parameters:** `int id`
     - **Return:** `Location` (class instance) or null if not found
 
 - `WeaponByID`
-    - **Short Description:** Get a weapon by ID.
+    - **Description:** Get a weapon by ID.
     - **Parameters:** `int id`
     - **Return:** `Weapon` (class instance) or null if not found
 
 - `MonsterByID`
-    - **Short Description:** Get a monster by ID.
+    - **Description:** Get a monster by ID.
     - **Parameters:** `int id`
     - **Return:** `Monster` (class instance) or null if not found
 
 - `QuestByID`
-    - **Short Description:** Get a quest by ID.
+    - **Description:** Get a quest by ID.
     - **Parameters:** `int id`
     - **Return:** `Quest` (class instance) or null if not found
+
+
 
 ### Quest.CS
 
@@ -111,18 +129,24 @@ CMI INF11B - Gewoon Fuji - Mini Project RPG Game
 **Methods:**
 - (No methods listed)
 
+
+
 ### SuperAdventure.CS
 
 #### Classes
 
 ##### SuperAdventure
 
+Controller or manager class, serves as the central point for managing game state, player actions, and interactions with the game world.
+
 **Fields:**
-- CurrentMonster
-- ThePlayer
+- CurrentMonster (instance of Monster class)
+- ThePlayer (instances of player class)
 
 **Methods:**
 - (No methods listed)
+
+
 
 ### Weapon.CS
 
@@ -131,9 +155,9 @@ CMI INF11B - Gewoon Fuji - Mini Project RPG Game
 ##### Weapon
 
 **Fields:**
-- ID
-- MaximumDamage
-- Name
+- ID int
+- MaximumDamage int
+- Name string
 
 **Methods:**
 - (No methods listed)
