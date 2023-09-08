@@ -2,7 +2,7 @@
 {
     public int ID;
     public string Name;
-    public int MaxDamage;
+    public double MaxDamage;
 
     public Weapon(int weaponId, string name, int maxDamage)
     {
