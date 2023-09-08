@@ -8,19 +8,19 @@
     "net7.0": []
   },
   "packageFolders": {
-    "C:\\Users\\Joris\\.nuget\\packages\\": {}
+    "C:\\Users\\Timon\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Joris\\Documents\\GitHub\\Gewoon_Fuji_RPG\\Gewoon_ Fuji_Mini_Project_RPG.csproj",
+      "projectUniqueName": "C:\\Users\\Timon\\OneDrive\\Documenten\\GitHub\\Gewoon_Fuji_RPG\\Gewoon_ Fuji_Mini_Project_RPG.csproj",
       "projectName": "Gewoon_ Fuji_Mini_Project_RPG",
-      "projectPath": "C:\\Users\\Joris\\Documents\\GitHub\\Gewoon_Fuji_RPG\\Gewoon_ Fuji_Mini_Project_RPG.csproj",
-      "packagesPath": "C:\\Users\\Joris\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Joris\\Documents\\GitHub\\Gewoon_Fuji_RPG\\obj\\",
+      "projectPath": "C:\\Users\\Timon\\OneDrive\\Documenten\\GitHub\\Gewoon_Fuji_RPG\\Gewoon_ Fuji_Mini_Project_RPG.csproj",
+      "packagesPath": "C:\\Users\\Timon\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Timon\\OneDrive\\Documenten\\GitHub\\Gewoon_Fuji_RPG\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Joris\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Timon\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -61,7 +61,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "c:\\program files\\dotnet\\sdk\\7.0.304\\RuntimeIdentifierGraph.json"
       }
     }
   }

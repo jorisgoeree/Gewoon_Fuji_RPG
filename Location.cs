@@ -11,7 +11,7 @@ public class Location
     public Location? LocationToWest;
     public Location? LocationToEast;
 
-    public Location(int id, string name, string description, Quest? questAvailableHere, Monster? monsterLivingHere)
+    public Location(int id, char letter, string name, string description, Quest? questAvailableHere, Monster? monsterLivingHere)
     {
         ID = id;
         Name = name;
