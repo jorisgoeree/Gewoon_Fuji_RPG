@@ -33,9 +33,9 @@ CMI INF11B - Gewoon Fuji - Mini Project RPG Game
 
 **Methods:**
 - `Attack`
-    - **Description:** Attacks a monster, damage is chance based, calculated based on CurrentWeapon.MaximumDamage with a chance to miss
+    - **Description:** Attacks a monster, damage is equal to CurrentWeapon.MaximumDamage. Chance for a critical hit, multiplies damage by 1.5x
     - **Parameters:** `Monster` (class instance)
-    - **Return:** `int DamageDealt`
+    - **Return:** void
 - `Move`
     - **Description:** Moves the player if chosen direction is valid
     - **Parameters:** string directionChoice (?? Not sure yet)
@@ -51,16 +51,15 @@ CMI INF11B - Gewoon Fuji - Mini Project RPG Game
 **Fields:**
 - CurrentHitPoints
 - ID
-- MaximumDamage
-- MaximumHitPoints
+- MaxDamage
+- MaxHitPoints
 - Name
 
 **Methods:**
 - `Attack`
-    - **Description:** Attacks the player, damage is chance based, from miss to MaximumDamage
+    - **Description:** Attacks the player, damage is equal to MaxDamage
     - **Parameters:** `Player` (class instance)
-    - **Return:** `int DamageDealt`
-
+    - **Return:** `int MaxDamage`
 
 
 ### World.CS
@@ -144,7 +143,10 @@ Controller or manager class, serves as the central point for managing game state
 - ThePlayer (instances of player class)
 
 **Methods:**
-- (No methods listed)
+- `FightSystem`
+    - **Description:** Manages the fight between player and monster, returns true if fight is won, else returns false. Player has a chance to flee from the fight, returns true if player fled succesfully.
+    - **Parameters:** Monster monster, Player player
+    - **Return:** bool fightWon 
 
 
 
