@@ -85,4 +85,33 @@
         Console.WriteLine("You dead my guy, what a pity.");
         return fightWon = false;
     }
+
+    public static void ChangeLocation(Player player)
+    {
+        Console.WriteLine("Where do you want to go?");
+        string locationToGo = Console.ReadLine();
+
+    }
+
+    public static void DisplayMap(Player player)
+    {
+        string map = player.CurrentLocation.ID switch
+        {
+            1 => "    T\n    |\n    H\n\n",
+            2 => "    A\n    |\nF---T---G\n    |\n    H",
+            3 => "     \n     \nT---G---B\n\n",
+            4 => "    P\n    |\n    A\n    |\n    T",
+            5 => "     \n     \n    P\n    |\n    A",
+            6 => "     \n     \nV---F---T\n\n",
+            7 => "     \n     \n    V---F\n\n",
+            8 => "     \n     \nG---B---S\n\n",
+            9 => "     \n     \nB---S\n\n"
+        };
+        Console.WriteLine(map);
+    }
+
+    public static void DisplayLocation(Player player) 
+    {
+        Console.WriteLine($"Current Location: {player.CurrentLocation.Name}");
+    }
 }

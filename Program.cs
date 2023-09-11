@@ -8,7 +8,7 @@ class Program
         World.PopulateMonsters();
         World.PopulateQuests();
         World.PopulateLocations();
-        
+
         // Introduction to the game
         // Ask for a player name
 
@@ -22,8 +22,9 @@ class Program
 
         Monster? monster = World.MonsterByID(3);
         Player player = new(100, World.LocationByID(1), World.WeaponByID(1), 100, "John Doe");
-        SuperAdventure.FightSystem(player, monster);
-
+        // SuperAdventure.FightSystem(player, monster);
+        SuperAdventure.DisplayLocation(player);
+        SuperAdventure.DisplayMap(player);
 
     }
 }
