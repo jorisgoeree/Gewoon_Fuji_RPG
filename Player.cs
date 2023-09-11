@@ -1,4 +1,5 @@
 ﻿public class Player
+///test
 {
     public const double CritChance = 0.10;
     
