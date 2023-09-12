@@ -99,11 +99,43 @@
 
     public static void ChangeLocation(Player player)
     {
+        Joris_Update_FightSystem
         Console.WriteLine("Where do you want to go? (n/s/e/w)");
         string locationToGo = Console.ReadLine();
 
-
-
+        Console.WriteLine("Where do you want to go (N/E/S/W)?");
+        string locationToGo = Console.ReadLine().ToUpper();
+        Location currentLocation = player.CurrentLocation;
+        switch (locationToGo)
+        {
+            case "N":
+                if (currentLocation.LocationToNorth != null)
+                    player.CurrentLocation = currentLocation.LocationToNorth;
+                else
+                    Console.WriteLine("Can't move to this location");
+                break;
+            case "E":
+                if (currentLocation.LocationToEast != null)
+                    player.CurrentLocation = currentLocation.LocationToEast;
+                else
+                    Console.WriteLine("Can't move to this location");
+                break;
+            case "S":
+                if (currentLocation.LocationToSouth != null)
+                    player.CurrentLocation = currentLocation.LocationToSouth;
+                else
+                    Console.WriteLine("Can't move to this location");
+                break;
+            case "W":
+                if (currentLocation.LocationToWest != null)
+                    player.CurrentLocation = currentLocation.LocationToWest;
+                else
+                    Console.WriteLine("Can't move to this location");
+                break;
+            default:
+                Console.WriteLine("Can't move to this location");
+                break;
+        }
     }
 
     public static void DisplayMap(Player player)
