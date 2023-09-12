@@ -99,10 +99,6 @@
 
     public static void ChangeLocation(Player player)
     {
-        Joris_Update_FightSystem
-        Console.WriteLine("Where do you want to go? (n/s/e/w)");
-        string locationToGo = Console.ReadLine();
-
         Console.WriteLine("Where do you want to go (N/E/S/W)?");
         string locationToGo = Console.ReadLine().ToUpper();
         Location currentLocation = player.CurrentLocation;

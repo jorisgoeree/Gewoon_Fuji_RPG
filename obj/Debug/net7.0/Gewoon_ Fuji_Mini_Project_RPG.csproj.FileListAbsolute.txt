@@ -12,3 +12,17 @@ C:\Users\Timon\OneDrive\Documenten\GitHub\Gewoon_Fuji_RPG\obj\Debug\net7.0\refin
 C:\Users\Timon\OneDrive\Documenten\GitHub\Gewoon_Fuji_RPG\obj\Debug\net7.0\Gewoon_ Fuji_Mini_Project_RPG.pdb
 C:\Users\Timon\OneDrive\Documenten\GitHub\Gewoon_Fuji_RPG\obj\Debug\net7.0\Gewoon_ Fuji_Mini_Project_RPG.genruntimeconfig.cache
 C:\Users\Timon\OneDrive\Documenten\GitHub\Gewoon_Fuji_RPG\obj\Debug\net7.0\ref\Gewoon_ Fuji_Mini_Project_RPG.dll
+C:\Users\Joris\Documents\GitHub\Gewoon_Fuji_RPG\obj\Debug\net7.0\Gewoon_ Fuji_Mini_Project_RPG.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Joris\Documents\GitHub\Gewoon_Fuji_RPG\obj\Debug\net7.0\Gewoon_ Fuji_Mini_Project_RPG.AssemblyInfoInputs.cache
+C:\Users\Joris\Documents\GitHub\Gewoon_Fuji_RPG\obj\Debug\net7.0\Gewoon_ Fuji_Mini_Project_RPG.AssemblyInfo.cs
+C:\Users\Joris\Documents\GitHub\Gewoon_Fuji_RPG\obj\Debug\net7.0\Gewoon_ Fuji_Mini_Project_RPG.csproj.CoreCompileInputs.cache
+C:\Users\Joris\Documents\GitHub\Gewoon_Fuji_RPG\obj\Debug\net7.0\Gewoon_ Fuji_Mini_Project_RPG.dll
+C:\Users\Joris\Documents\GitHub\Gewoon_Fuji_RPG\obj\Debug\net7.0\refint\Gewoon_ Fuji_Mini_Project_RPG.dll
+C:\Users\Joris\Documents\GitHub\Gewoon_Fuji_RPG\obj\Debug\net7.0\Gewoon_ Fuji_Mini_Project_RPG.pdb
+C:\Users\Joris\Documents\GitHub\Gewoon_Fuji_RPG\bin\Debug\net7.0\Gewoon_ Fuji_Mini_Project_RPG.exe
+C:\Users\Joris\Documents\GitHub\Gewoon_Fuji_RPG\bin\Debug\net7.0\Gewoon_ Fuji_Mini_Project_RPG.deps.json
+C:\Users\Joris\Documents\GitHub\Gewoon_Fuji_RPG\bin\Debug\net7.0\Gewoon_ Fuji_Mini_Project_RPG.runtimeconfig.json
+C:\Users\Joris\Documents\GitHub\Gewoon_Fuji_RPG\bin\Debug\net7.0\Gewoon_ Fuji_Mini_Project_RPG.dll
+C:\Users\Joris\Documents\GitHub\Gewoon_Fuji_RPG\bin\Debug\net7.0\Gewoon_ Fuji_Mini_Project_RPG.pdb
+C:\Users\Joris\Documents\GitHub\Gewoon_Fuji_RPG\obj\Debug\net7.0\Gewoon_ Fuji_Mini_Project_RPG.genruntimeconfig.cache
+C:\Users\Joris\Documents\GitHub\Gewoon_Fuji_RPG\obj\Debug\net7.0\ref\Gewoon_ Fuji_Mini_Project_RPG.dll
