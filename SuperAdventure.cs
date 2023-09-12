@@ -1,30 +1,34 @@
 ﻿static class SuperAdventure
 {
     public const double FlightSuccesRate = 0.33; // 33% chance of succes
-    
+
+    public static Potion smallPot = new Potion("Small potion", "Heals a Small amount of HP", 10);
+    public static Potion largePot = new Potion("Large potion", "Heals a Large amount of HP", 20);
+
     public static bool FightSystem(Player player, Monster monster)
     {
         bool fightWon;
         int damageDealt;
         int damageReceived;
         string monsterTitleCasing = char.ToUpper(monster.Name[0]) + monster.Name.Substring(1); // Used for displaying the name during the fight
-        
+
         Console.WriteLine($"You encountered a {monster.Name}.");
         Console.WriteLine("What do you want to do?");
         Console.Write("1: Fight\n2: Run Away ");
-        
+
         // Parse the player's choice
         int fightChoice = 0;
         bool validChoice = false;
-        while(!validChoice)
+        while (!validChoice)
         {
             string? fightChoiceString = Console.ReadLine();
             validChoice = int.TryParse(fightChoiceString, out fightChoice);
-            if (!validChoice){
+            if (!validChoice)
+            {
                 Console.WriteLine("Invalid input, try again.");
             }
         }
-        
+
         // If the player chose escape, success is based on chance
         if (fightChoice == 2)
         {
@@ -35,13 +39,13 @@
                 Console.WriteLine($"You successfully escaped the {monster.Name}.");
                 return fightWon = true; // TODO not useful to have a true if escaped
             }
-            else{
+            else
+            {
                 // Monster gets first hit if failed escape attempt
                 damageReceived = monster.Attack(player);
                 Console.WriteLine($"You fell down while trying to run away, the {monster.Name} attacks you for {damageReceived} damage.");
                 Console.WriteLine("Press any key to continue");
                 Console.ReadKey();
-                
             }
         }
         // If the player chose attack, or failed escape attempt
@@ -60,7 +64,22 @@
             // Player chose to use an item
             if (fightMenuChoice == "2")
             {
-                //Player.UseAnItem(); // TODO Link up this method with items.
+                int smallCount = player.PlayerInventory.SmallPotions.Count();
+                int largeCount = player.PlayerInventory.LargePotions.Count();
+
+                Console.WriteLine($"You have:\n{smallCount} Small Potions\n{largeCount} Large Potions\n");
+                Console.WriteLine("What kind of potion do you want to drink?\n1: Small Potion\n2: Large Potion");
+
+                string choicePotion = Console.ReadLine();
+
+                if (choicePotion == "1")
+                {
+                    player.DrinkSmallPotion();
+                }
+                else if (choicePotion == "2")
+                {
+                    player.DrinkLargePotion();
+                }
             }
             else // Player choose to attack
             {
@@ -73,6 +92,22 @@
                 if (monster.CurrentHitPoints <= 0)
                 {
                     Console.WriteLine($"The {monster.Name} is dead, you won!");
+
+                    Random rnd = new Random();
+
+                    double potionDropChance = rnd.NextDouble();
+
+                    if (potionDropChance <= 0.25)
+                    {
+                        player.PlayerInventory.LargePotions.Add(largePot);
+                        Console.WriteLine("The monster dropped a large potion!");
+                    }
+                    else if (potionDropChance <= 0.5)
+                    {
+                        player.PlayerInventory.SmallPotions.Add(smallPot);
+                        Console.WriteLine("The monster dropped a small potion!");
+                    }
+
                     Console.WriteLine("Press any key to continue");
                     Console.ReadKey();
                     return fightWon = true;
@@ -151,7 +186,7 @@
         Console.WriteLine(map);
     }
 
-    public static void DisplayLocation(Player player) 
+    public static void DisplayLocation(Player player)
     {
         Console.WriteLine($"Current Location: {player.CurrentLocation.Name}");
     }
