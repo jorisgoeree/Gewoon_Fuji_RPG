@@ -190,6 +190,7 @@ static class SuperAdventure
                     Console.ReadKey();
                 }
                 break;
+
              case "Q":
                 Console.WriteLine("Are you sure you want to leave the game? (yes/no) You will lose your progess.");
                 string? ConfirmExit = Console.ReadLine();
