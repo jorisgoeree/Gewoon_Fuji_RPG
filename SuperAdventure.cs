@@ -1,4 +1,6 @@
-﻿static class SuperAdventure
+﻿using System.Numerics;
+
+static class SuperAdventure
 {
     public const double FlightSuccesRate = 0.33; // 33% chance of succes
 
@@ -12,6 +14,7 @@
         int damageReceived;
         string monsterTitleCasing = char.ToUpper(monster.Name[0]) + monster.Name.Substring(1); // Used for displaying the name during the fight
 
+        Console.Clear();
         Console.WriteLine($"You encountered a {monster.Name}.");
         Console.WriteLine("What do you want to do?");
         Console.Write("1: Fight\n2: Run Away ");
@@ -28,6 +31,8 @@
                 Console.WriteLine("Invalid input, try again.");
             }
         }
+
+        Console.Clear();
 
         // If the player chose escape, success is based on chance
         if (fightChoice == 2)
@@ -51,15 +56,17 @@
         // If the player chose attack, or failed escape attempt
         while (player.CurrentHitPoints > 0)
         {
-            Console.WriteLine();
             Console.WriteLine($"Your HP: {player.CurrentHitPoints}/{player.MaximumHitPoints}");
             Console.WriteLine($"{monsterTitleCasing} HP: {monster.CurrentHitPoints}/{monster.MaxHitPoints}");
+            Console.WriteLine("Press any key to continue");
+            Console.ReadKey();
+            Console.Clear();
 
             // Player's turn
-            Console.WriteLine();
             Console.WriteLine("It's your turn.");
             Console.WriteLine("What do you want to do?\n1: Attack\n2: Use an item");
             string fightMenuChoice = Console.ReadLine();
+            Console.Clear();
 
             // Player chose to use an item
             if (fightMenuChoice == "2")
@@ -83,7 +90,6 @@
             }
             else // Player choose to attack
             {
-                Console.WriteLine();
                 damageDealt = player.Attack(monster);
                 Console.WriteLine($"You dealt {damageDealt} damage.");
                 Console.WriteLine($"{monsterTitleCasing} HP: {monster.CurrentHitPoints}/{monster.MaxHitPoints}");
@@ -110,25 +116,30 @@
 
                     Console.WriteLine("Press any key to continue");
                     Console.ReadKey();
+                    Console.Clear();
                     return fightWon = true;
                 }
                 Console.WriteLine("Press any key to continue");
                 Console.ReadKey();
+                Console.Clear();
             }
 
             // Monster's turn
-            Console.WriteLine();
             Console.WriteLine($"{monsterTitleCasing}'s turn");
             Console.WriteLine("Press any key to continue");
             Console.ReadKey();
+            Console.Clear();
 
             damageReceived = monster.Attack(player);
-            Console.WriteLine();
             Console.WriteLine($"The {monster.Name} hits you for {damageReceived} damage.");
             Console.WriteLine("Press any key to continue");
             Console.ReadKey();
+            Console.Clear();
         }
+        Console.Clear();
         Console.WriteLine("You died!");
+        Console.WriteLine("Press any key to continue");
+        Console.ReadKey();
         return fightWon = false;
     }
 
@@ -189,5 +200,92 @@
     public static void DisplayLocation(Player player)
     {
         Console.WriteLine($"Current Location: {player.CurrentLocation.Name}");
+    }
+
+    public static void AcceptQuest(Quest quest, Player player)
+    {
+        if (quest.ID == 2) // Clear the farmers field
+        {
+            Console.Clear();
+            SuperAdventure.DisplayLocation(player);
+            Console.WriteLine(player.CurrentLocation.Description);
+
+            Console.WriteLine();
+            Console.WriteLine("The farmer is wildly waving at you.");
+            Console.WriteLine("You decide to go over and hear him out.");
+            Console.WriteLine("Press any key to continue");
+            Console.ReadKey();
+
+            Console.Clear();
+            SuperAdventure.DisplayLocation(player);
+            Console.WriteLine(player.CurrentLocation.Description);
+            Console.WriteLine();
+            Console.WriteLine("It's time for me to harvest the crops, but it's too dangerous to do any work right now.");
+            Console.WriteLine("There's snakes all over the fields, please take care of them for me.");
+            Console.WriteLine("The fields are just to the west of here.");
+            Console.WriteLine("Press any key to continue");
+            Console.ReadKey();
+            Console.WriteLine();
+            Console.WriteLine($"Quest accepted: {player.CurrentLocation.QuestAvailableHere.Description} 0/3");
+            Console.WriteLine("Press any key to continue");
+            Console.ReadKey();
+            player.CurrentLocation.QuestAvailableHere.QuestAccepted = true;
+        }
+        else if (quest.ID == 1) 
+        {
+            Console.Clear();
+            SuperAdventure.DisplayLocation(player);
+            Console.WriteLine(player.CurrentLocation.Description);
+
+            Console.WriteLine();
+            Console.WriteLine("The alchemist has apparently gone mad, throwing his glass bottles around and screaming like a mad man.");
+            Console.WriteLine("You fear for your own safety, but yell at him despite that.");
+            Console.WriteLine("Press any key to continue");
+            Console.ReadKey();
+
+            Console.Clear();
+            SuperAdventure.DisplayLocation(player);
+            Console.WriteLine(player.CurrentLocation.Description);
+            Console.WriteLine();
+            Console.WriteLine("WHAT DO YOU WANT?! Can't you see I don't have any potions to sell right now.");
+            Console.WriteLine("Those damn rats have chewed up all my herbs.");
+            Console.WriteLine("But wait.. Maybe you can go and take care of them for me?");
+            Console.WriteLine("My garden is a small walk north of here, can't miss it.");
+            Console.WriteLine("Press any key to continue");
+            Console.ReadKey();
+            Console.WriteLine();
+            Console.WriteLine($"Quest accepted: {player.CurrentLocation.QuestAvailableHere.Description} 0/3");
+            Console.WriteLine("Press any key to continue");
+            Console.ReadKey();
+            player.CurrentLocation.QuestAvailableHere.QuestAccepted = true;
+        }
+        else if (quest.ID == 3)
+        {
+            Console.Clear();
+            SuperAdventure.DisplayLocation(player);
+            Console.WriteLine(player.CurrentLocation.Description);
+
+            Console.WriteLine();
+            Console.WriteLine("The guard is slightly hunched over, and you hear a faint muttering a few words every now and then.");
+            Console.WriteLine("'WAKE UP!!', You yell at the top of your lungs.");
+            Console.WriteLine("Press any key to continue");
+            Console.ReadKey();
+
+            Console.Clear();
+            SuperAdventure.DisplayLocation(player);
+            Console.WriteLine(player.CurrentLocation.Description);
+            Console.WriteLine();
+            Console.WriteLine("Huh, what!? NO, NOO, I wasn't sleeping. Just thinking really hard!");
+            Console.WriteLine("But hey, while you're here, do me a favor will ya.");
+            Console.WriteLine("There's some spiders to east of here, collect some of their silk and I'll make it worth your while.");
+            Console.WriteLine("What!? Naahh, you'll be fine. They're just a little *AHUM* poisonous *AHUM*, nothing to worry about.");
+            Console.WriteLine("Press any key to continue");
+            Console.ReadKey();
+            Console.WriteLine();
+            Console.WriteLine($"Quest accepted: {player.CurrentLocation.QuestAvailableHere.Description} 0/3");
+            Console.WriteLine("Press any key to continue");
+            Console.ReadKey();
+            player.CurrentLocation.QuestAvailableHere.QuestAccepted = true;
+        }
     }
 }

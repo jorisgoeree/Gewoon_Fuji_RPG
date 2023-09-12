@@ -24,7 +24,7 @@
         double hitModifier = rnd.NextDouble();
         if (hitModifier < CritChance)
         {
-            Console.WriteLine("Critical Hit!");
+            Console.WriteLine("\nCritical Hit!");
             damage = MaxDamage * 2;
             player.CurrentHitPoints -= damage;
         }
