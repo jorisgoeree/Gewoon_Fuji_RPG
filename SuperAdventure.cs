@@ -145,7 +145,7 @@ static class SuperAdventure
 
     public static void ChangeLocation(Player player)
     {
-        Console.WriteLine("Where do you want to go (N/E/S/W)?");
+        Console.WriteLine("Where do you want to go (N/E/S/W)? \nPress 'Q to leave the game.");
         string locationToGo = Console.ReadLine().ToUpper();
         Location currentLocation = player.CurrentLocation;
         switch (locationToGo)
@@ -195,7 +195,7 @@ static class SuperAdventure
                 string? ConfirmExit = Console.ReadLine();
                 if (ConfirmExit == "yes")
                 {
-                    Console.WriteLine("Quit");
+                    Console.WriteLine("You quit.");
                     Environment.Exit(0);
                 }
                 else
