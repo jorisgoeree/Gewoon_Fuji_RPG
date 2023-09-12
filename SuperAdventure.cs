@@ -1,4 +1,4 @@
-﻿static class SuperAdventure
+static class SuperAdventure
 {
     public const double FlightSuccesRate = 0.33; // 33% chance of succes
     
@@ -88,8 +88,27 @@
 
     public static void ChangeLocation(Player player)
     {
-        Console.WriteLine("Where do you want to go?");
+        Console.WriteLine("Where do you want to go? \nChoose 'q' to quit the game.");
         string locationToGo = Console.ReadLine();
+        switch (locationToGo)
+        {
+            case "n":
+            case "s":
+            case "e":
+            case "w":
+            case "q":
+                Console.WriteLine("Are you sure you want to leave the game? (yes/no) You will lose your progess.");
+                string? ConfirmExit = Console.ReadLine();
+                if (ConfirmExit == "yes")
+                {
+                    Console.WriteLine("Quit");
+                    break;
+                }
+                else
+                {
+                    ChangeLocation(player);
+                }
+        }
 
     }
 
