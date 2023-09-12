@@ -197,7 +197,7 @@ static class SuperAdventure
                 if (ConfirmExit == "yes")
                 {
                     Console.WriteLine("You quit.");
-                    break;
+                    Environment.Exit(0);
                 }
                 else
                 {
