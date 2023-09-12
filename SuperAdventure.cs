@@ -329,5 +329,6 @@ static class SuperAdventure
     {
         player.CompleteQuest(quest);
         Console.WriteLine($"Quest completed: {quest.Name}");
+        Console.WriteLine($"Quests completed: {player.CompletedQuests}");
     }
 }
