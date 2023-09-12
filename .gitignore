@@ -434,3 +434,8 @@ FodyWeavers.xsd
 *.props
 *.json
 *.cache
+*.pdb
+*.dll
+*.pdb
+*.dll
+.vs/Gewoon_ Fuji_Mini_Project_RPG/v17/.suo

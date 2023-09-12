@@ -50,7 +50,6 @@ class Program
             {
 
             }
-            Console.ReadKey();
             spidersKilled++;
         }
 
