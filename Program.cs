@@ -27,19 +27,6 @@ class Program
             Console.WriteLine("Ahh, scared I see. Well, no bother, take some time to collect yourself.");
             startChoice = Console.ReadLine();
         }
-        //Console.Write("What doth thou call thee: ");
-
-        //string playerName = Console.ReadLine();
-        Player player = new(1, World.LocationByID(1), World.WeaponByID(1), 100, "John Doe");
-
-        //Console.WriteLine($"Good to meet you, {playerName}. Are you ready to start your adventure? (y/n) ");
-
-        //string startChoice = Console.ReadLine();
-        //while (startChoice != "y")
-        //{
-        //    Console.WriteLine("Ahh, scared I see. Well, no bother, take some time to collect yourself.");
-        //    startChoice = Console.ReadLine();
-        //}
 
         // TODO Explain the goal of the game
 
@@ -71,14 +58,10 @@ class Program
                     player.CurrentLocation = World.LocationByID(1);
                 }
             }
-            else if (player.CurrentLocation.QuestAvailableHere != null) { }
-            spidersKilled++;
-
             else if (player.CurrentLocation.QuestAvailableHere != null)
             {
                 if (!player.CurrentLocation.QuestAvailableHere.QuestAccepted)
                 {
-                    Console.WriteLine("HELLOERFEFFE");
                     SuperAdventure.AcceptQuest(player.CurrentLocation.QuestAvailableHere, player);
                 }
             }
