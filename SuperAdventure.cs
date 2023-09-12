@@ -154,29 +154,49 @@ static class SuperAdventure
                 if (currentLocation.LocationToNorth != null)
                     player.CurrentLocation = currentLocation.LocationToNorth;
                 else
+                {
                     Console.WriteLine("Can't move to this location");
+                    Console.WriteLine("Press any key to continue");
+                    Console.ReadKey();
+                }
                 break;
             case "E":
                 if (currentLocation.LocationToEast != null)
                     player.CurrentLocation = currentLocation.LocationToEast;
                 else
+                {
                     Console.WriteLine("Can't move to this location");
+                    Console.WriteLine("Press any key to continue");
+                    Console.ReadKey();
+                }
                 break;
             case "S":
                 if (currentLocation.LocationToSouth != null)
                     player.CurrentLocation = currentLocation.LocationToSouth;
                 else
+                {
                     Console.WriteLine("Can't move to this location");
+                    Console.WriteLine("Press any key to continue");
+                    Console.ReadKey();
+                }
                 break;
             case "W":
                 if (currentLocation.LocationToWest != null)
                     player.CurrentLocation = currentLocation.LocationToWest;
                 else
+                {
                     Console.WriteLine("Can't move to this location");
+                    Console.WriteLine("Press any key to continue");
+                    Console.ReadKey();
+                }
                 break;
             default:
-                Console.WriteLine("Can't move to this location");
-                break;
+                {
+                    Console.WriteLine("Can't move to this location");
+                    Console.WriteLine("Press any key to continue");
+                    Console.ReadKey();
+                    break;
+                }
         }
     }
 
