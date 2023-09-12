@@ -190,26 +190,26 @@ static class SuperAdventure
                     Console.ReadKey();
                 }
                 break;
-
-             case "Q":
+            case "Q":
                 Console.WriteLine("Are you sure you want to leave the game? (yes/no) You will lose your progess.");
                 string? ConfirmExit = Console.ReadLine();
                 if (ConfirmExit == "yes")
                 {
                     Console.WriteLine("Quit");
-                    break;
+                    Environment.Exit(0);
                 }
                 else
                 {
                     ChangeLocation(player);
                 }
+                break;
             default:
-                {
-                    Console.WriteLine("Can't move to this location");
-                    Console.WriteLine("Press any key to continue");
-                    Console.ReadKey();
-                    break;
-                }
+            {
+                Console.WriteLine("Can't move to this location");
+                Console.WriteLine("Press any key to continue");
+                Console.ReadKey();
+                break;
+            }
         }
     }
 
@@ -264,7 +264,7 @@ static class SuperAdventure
             Console.ReadKey();
             player.CurrentLocation.QuestAvailableHere.QuestAccepted = true;
         }
-        else if (quest.ID == 1) 
+        else if (quest.ID == 1)
         {
             Console.Clear();
             SuperAdventure.DisplayLocation(player);
