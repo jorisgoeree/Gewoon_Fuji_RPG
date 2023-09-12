@@ -44,31 +44,43 @@
                 
             }
         }
-
+        // If the player chose attack, or failed escape attempt
         while (player.CurrentHitPoints > 0)
         {
             Console.WriteLine();
             Console.WriteLine($"Your HP: {player.CurrentHitPoints}/{player.MaximumHitPoints}");
             Console.WriteLine($"{monsterTitleCasing} HP: {monster.CurrentHitPoints}/{monster.MaxHitPoints}");
-            
+
             // Player's turn
             Console.WriteLine();
             Console.WriteLine("It's your turn.");
-            Console.WriteLine("Press any key to continue");
-            Console.ReadKey();
-            Console.WriteLine();
-            player.Attack(monster);
-            Console.WriteLine($"{monsterTitleCasing} HP: {monster.CurrentHitPoints}/{monster.MaxHitPoints}");
+            Console.WriteLine("What do you want to do?\n1: Attack\n2: Use an item");
+            string fightMenuChoice = Console.ReadLine();
 
-            // Check if the monster is dead
-            if (monster.CurrentHitPoints <= 0)
+            // Player chose to use an item
+            if (fightMenuChoice == "2")
             {
-                Console.WriteLine($"The {monster.Name} is dead, you won!");
-                return fightWon = true;
+                //Player.UseAnItem(); // TODO Link up this method with items.
             }
-            Console.WriteLine("Press any key to continue");
-            Console.ReadKey();
-            
+            else // Player choose to attack
+            {
+                Console.WriteLine();
+                damageDealt = player.Attack(monster);
+                Console.WriteLine($"You dealt {damageDealt} damage.");
+                Console.WriteLine($"{monsterTitleCasing} HP: {monster.CurrentHitPoints}/{monster.MaxHitPoints}");
+
+                // Check if the monster is dead
+                if (monster.CurrentHitPoints <= 0)
+                {
+                    Console.WriteLine($"The {monster.Name} is dead, you won!");
+                    Console.WriteLine("Press any key to continue");
+                    Console.ReadKey();
+                    return fightWon = true;
+                }
+                Console.WriteLine("Press any key to continue");
+                Console.ReadKey();
+            }
+
             // Monster's turn
             Console.WriteLine();
             Console.WriteLine($"{monsterTitleCasing}'s turn");
@@ -80,14 +92,17 @@
             Console.WriteLine($"The {monster.Name} hits you for {damageReceived} damage.");
             Console.WriteLine("Press any key to continue");
             Console.ReadKey();
-            
         }
-        Console.WriteLine("You dead my guy, what a pity.");
+        Console.WriteLine("You died!");
         return fightWon = false;
     }
 
     public static void ChangeLocation(Player player)
     {
+        Joris_Update_FightSystem
+        Console.WriteLine("Where do you want to go? (n/s/e/w)");
+        string locationToGo = Console.ReadLine();
+
         Console.WriteLine("Where do you want to go (N/E/S/W)?");
         string locationToGo = Console.ReadLine().ToUpper();
         Location currentLocation = player.CurrentLocation;
@@ -121,7 +136,6 @@
                 Console.WriteLine("Can't move to this location");
                 break;
         }
-
     }
 
     public static void DisplayMap(Player player)

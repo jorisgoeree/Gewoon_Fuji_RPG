@@ -17,25 +17,25 @@
         Name = name;
     }
 
-    public void Attack(Monster monster)
+    public int Attack(Monster monster)
     {
         // TODO Implement different types of attack
         // Console.WriteLine("Choose your attack:");
         // Console.WriteLine($"1: {CurrentWeapon.Name}"); // TODO 
         // Console.WriteLine($"2: Lifesteal"); // TODO Decide on amount of dmg
         
-        Random rnd = new(); // TODO ??Make this a public const in World.cs??
+        Random rnd = new();
 
-        double damageDealt = CurrentWeapon.MaxDamage;
+        double damage = CurrentWeapon.MaxDamage;
         double hitModifier = rnd.NextDouble();
         if (hitModifier <= CritChance){
-            damageDealt = (int)(CurrentWeapon.MaxDamage * 1.5);
+            damage = (int)(CurrentWeapon.MaxDamage * 1.5);
             Console.WriteLine("Critical Hit!");
         }
-        monster.CurrentHitPoints -= (int)damageDealt;
+        monster.CurrentHitPoints -= (int)damage;
         if (monster.CurrentHitPoints < 0){
             monster.CurrentHitPoints = 0;
         }
-        Console.WriteLine($"You dealt {damageDealt} damage.");
+        return (int)damage;
     }
 }

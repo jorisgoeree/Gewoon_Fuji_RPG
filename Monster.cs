@@ -5,6 +5,7 @@
     public int MaxHitPoints;
     public int MaxDamage;
     public int CurrentHitPoints;
+    public const double CritChance = 0.10;
 
     public Monster(int id, string name, int maxDamage, int maxHitPoints, int currentHitPoints)
     {
@@ -18,8 +19,16 @@
 
     public int Attack(Player player)
     {
-        // TODO Implement crit system
-        player.CurrentHitPoints -= MaxDamage;
-        return MaxDamage;
+        int damage = MaxDamage;
+        Random rnd = new();
+        double hitModifier = rnd.NextDouble();
+        if (hitModifier < CritChance)
+        {
+            Console.WriteLine("Critical Hit!");
+            damage = MaxDamage * 2;
+            player.CurrentHitPoints -= damage;
+        }
+        player.CurrentHitPoints -= damage;
+        return damage;
     }
 }
