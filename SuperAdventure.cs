@@ -190,6 +190,19 @@ static class SuperAdventure
                     Console.ReadKey();
                 }
                 break;
+
+             case "Q":
+                Console.WriteLine("Are you sure you want to leave the game? (yes/no) You will lose your progess.");
+                string? ConfirmExit = Console.ReadLine();
+                if (ConfirmExit == "yes")
+                {
+                    Console.WriteLine("Quit");
+                    break;
+                }
+                else
+                {
+                    ChangeLocation(player);
+                }
             default:
                 {
                     Console.WriteLine("Can't move to this location");
