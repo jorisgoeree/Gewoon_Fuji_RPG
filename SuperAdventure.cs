@@ -320,5 +320,14 @@ static class SuperAdventure
             Console.ReadKey();
             player.CurrentLocation.QuestAvailableHere.QuestAccepted = true;
         }
+
+        quest.QuestAccepted = true;
+        Console.WriteLine($"Quest accepted: {quest.Name}");
+    }
+
+    public static void CompleteQuest(Quest quest, Player player)
+    {
+        player.CompleteQuest(quest);
+        Console.WriteLine($"Quest completed: {quest.Name}");
     }
 }

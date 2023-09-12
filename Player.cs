@@ -1,4 +1,6 @@
-﻿public class Player
+﻿using System.Dynamic;
+
+public class Player
 {
     public const double CritChance = 0.10;
 
@@ -8,7 +10,7 @@
     public Inventory PlayerInventory;
     public int MaximumHitPoints;
     public string Name;
-
+    public int CompletedQuests { get; private set;}
     public Player(int currentHitPoints, Location currentLocation, Weapon currentWeapon, int maximumHitPoints, string name)
     {
         CurrentHitPoints = currentHitPoints;
@@ -86,6 +88,15 @@
         else
         {
             Console.WriteLine("You do not have this potion in your inventory!");
+        }
+    }
+
+    public void CompleteQuest(Quest quest)
+    {
+        if (quest.QuestAccepted)
+        {
+            quest.QuestAccepted = false;
+            CompletedQuests++;
         }
     }
 }

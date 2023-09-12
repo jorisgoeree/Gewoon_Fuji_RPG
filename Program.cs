@@ -70,5 +70,6 @@ class Program
 
         // Player (presumably) won the game
         Console.WriteLine($"Congratulations {player.Name}, you have saved everyone and will live happily ever after.");
+        Console.WriteLine($"Quest completed: {player.CompletedQuests}");
     }
 }
