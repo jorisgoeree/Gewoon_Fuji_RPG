@@ -117,6 +117,7 @@ static class SuperAdventure
                     Console.WriteLine("Press any key to continue");
                     Console.ReadKey();
                     Console.Clear();
+                    monster.CurrentHitPoints = monster.MaxHitPoints;
                     return fightWon = true;
                 }
                 Console.WriteLine("Press any key to continue");
@@ -299,7 +300,7 @@ static class SuperAdventure
             Console.WriteLine(player.CurrentLocation.Description);
 
             Console.WriteLine();
-            Console.WriteLine("The guard is slightly hunched over, and you hear a faint muttering a few words every now and then.");
+            Console.WriteLine("The guard is slightly hunched over, and you hear him faintly muttering a few words every now and then.");
             Console.WriteLine("'WAKE UP!!', You yell at the top of your lungs.");
             Console.WriteLine("Press any key to continue");
             Console.ReadKey();
@@ -310,7 +311,7 @@ static class SuperAdventure
             Console.WriteLine();
             Console.WriteLine("Huh, what!? NO, NOO, I wasn't sleeping. Just thinking really hard!");
             Console.WriteLine("But hey, while you're here, do me a favor will ya.");
-            Console.WriteLine("There's some spiders to east of here, collect some of their silk and I'll make it worth your while.");
+            Console.WriteLine("There's some spiders east of here, collect some of their silk and I'll make it worth your while.");
             Console.WriteLine("What!? Naahh, you'll be fine. They're just a little *AHUM* poisonous *AHUM*, nothing to worry about.");
             Console.WriteLine("Press any key to continue");
             Console.ReadKey();

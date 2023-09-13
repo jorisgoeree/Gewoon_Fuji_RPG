@@ -12,10 +12,10 @@ class Program
         // Introduction to the game
         Console.WriteLine("------------Welcome to F.U.J.I!------------");
         Console.WriteLine("Forgotten Universe: Journeys of Illusion\n");
-        Console.Write("What doth thou call thee: ");
+        Console.Write("What doth thou call thyself: ");
 
         string playerName = Console.ReadLine();
-        Player player = new(100, World.LocationByID(1), World.WeaponByID(1), 100, playerName);
+        Player player = new(30, World.LocationByID(1), World.WeaponByID(1), 30, playerName);
         player.PlayerInventory.SmallPotions.Add(new Potion("Small potion", "Heals a small amount of HP", 10));
         player.PlayerInventory.LargePotions.Add(new Potion("Large potion", "Heals a Large amount of HP", 20));
 
@@ -29,6 +29,9 @@ class Program
         }
 
         // TODO Explain the goal of the game
+        Console.WriteLine("Look around for townsfolk in need of help, complete their quests to earn your rightful place in history.");
+        Console.WriteLine("Press any key to continue");
+        Console.ReadKey();
 
         int spidersKilled = 0;
         while (spidersKilled < 3) // Kill three spiders to win the game

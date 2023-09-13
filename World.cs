@@ -46,17 +46,17 @@ public static class World
 
     public static void PopulateWeapons()
     {
-        Weapons.Add(new Weapon(WEAPON_ID_RUSTY_SWORD, "Rusty sword", 5));
+        Weapons.Add(new Weapon(WEAPON_ID_RUSTY_SWORD, "Rusty sword", 4));
         Weapons.Add(new Weapon(WEAPON_ID_CLUB, "Club", 10));
     }
 
     public static void PopulateMonsters()
     {
-        Monster rat = new Monster(MONSTER_ID_RAT, "rat", 1, 3, 3);
+        Monster rat = new Monster(MONSTER_ID_RAT, "rat", 5, 8, 8);
 
-        Monster snake = new Monster(MONSTER_ID_SNAKE, "snake", 10, 7, 7);
+        Monster snake = new Monster(MONSTER_ID_SNAKE, "snake", 10, 12, 12);
 
-        Monster giantSpider = new Monster(MONSTER_ID_GIANT_SPIDER, "giant spider", 3, 10, 10);
+        Monster giantSpider = new Monster(MONSTER_ID_GIANT_SPIDER, "giant spider", 12, 16, 16);
 
         Monsters.Add(rat);
         Monsters.Add(snake);
@@ -96,9 +96,9 @@ public static class World
         farmersField.MonsterLivingHere = MonsterByID(MONSTER_ID_SNAKE);
 
         Location guardPost = new Location(LOCATION_ID_GUARD_POST, LOCATION_CHAR_GUARD_POST, "Guard post", "There is a large, tough-looking guard here.", null, null);
+        guardPost.QuestAvailableHere = QuestByID(QUEST_ID_COLLECT_SPIDER_SILK);
 
         Location bridge = new Location(LOCATION_ID_BRIDGE, LOCATION_CHAR_BRIDGE, "Bridge", "A stone bridge crosses a wide river.", null, null);
-        bridge.QuestAvailableHere = QuestByID(QUEST_ID_COLLECT_SPIDER_SILK);
 
         Location spiderField = new Location(LOCATION_ID_SPIDER_FIELD, LOCATION_CHAR_SPIDER_FIELD, "Forest", "You see spider webs covering covering the trees in this forest.", null, null);
         spiderField.MonsterLivingHere = MonsterByID(MONSTER_ID_GIANT_SPIDER);
