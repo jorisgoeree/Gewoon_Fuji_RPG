@@ -103,7 +103,8 @@ static class SuperAdventure
                     int questsCompleted = player.CompletedQuests;
                     Console.WriteLine($"Quests completed: {questsCompleted}");
                 
-
+                    SuperAdventure.CompleteQuest(player.CurrentLocation.QuestAvailableHere, player);
+                    
                     Random rnd = new Random();
 
                     double potionDropChance = rnd.NextDouble();
@@ -333,16 +334,23 @@ static class SuperAdventure
         quest.QuestAccepted = true;
         Console.WriteLine($"Quest accepted: {quest.Name}");
     }
-
     public static void CompleteQuest(Quest quest, Player player)
     {
-        player.CompleteQuest(quest);
-        int questCompleted = player.CompletedQuests;
-        int totalQuests = World.Quests.Count;
-        int questLeft = totalQuests - questCompleted;
+        if (quest != null)
+        {
+            player.CompleteQuest(quest);
+            int questCompleted = player.CompletedQuests;
+            int totalQuests = World.Quests.Count;
+            int questLeft = totalQuests - questCompleted;
 
-        Console.WriteLine($"Quest completed: {quest.Name}");
-        Console.WriteLine($"Quests completed: {player.CompletedQuests}");
-        Console.WriteLine($"Quest left: {questLeft}");
+            Console.WriteLine($"Quest completed: {quest.Name}");
+            Console.WriteLine($"Quests completed: {player.CompletedQuests}");
+            Console.WriteLine($"Quests left: {questLeft}");
+        }
+        else
+        {
+            Console.WriteLine("Quest is null.");
+        }
     }
+
 }
