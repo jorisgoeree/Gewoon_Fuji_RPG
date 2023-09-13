@@ -119,6 +119,8 @@ static class SuperAdventure
                         Console.WriteLine("The monster dropped a small potion!");
                     }
 
+                    SuperAdventure.CompleteQuest(player.CurrentLocation.QuestAvailableHere, player);
+
                     Console.WriteLine("Press any key to continue");
                     Console.ReadKey();
                     Console.Clear();
