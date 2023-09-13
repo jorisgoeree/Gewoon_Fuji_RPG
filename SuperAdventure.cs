@@ -98,12 +98,11 @@ static class SuperAdventure
                 if (monster.CurrentHitPoints <= 0)
                 {
                     Console.WriteLine($"The {monster.Name} is dead, you won!");
+                    Console.WriteLine($"");
 
                     int questsCompleted = player.CompletedQuests;
-                    int totalQuests = World.Quests.Count;
-                    int questsLeft = totalQuests - questsCompleted;
                     Console.WriteLine($"Quests completed: {questsCompleted}");
-                    Console.WriteLine($"Quests left: {questsLeft}");
+                
 
                     Random rnd = new Random();
 
