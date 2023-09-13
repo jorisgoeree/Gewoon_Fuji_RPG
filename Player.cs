@@ -10,7 +10,7 @@ public class Player
     public Inventory PlayerInventory;
     public int MaximumHitPoints;
     public string Name;
-    public int CompletedQuests { get; private set;}
+    public int CompletedQuests { get; set; }
     public List<Quest> Quests { get; private set;}
     public Player(int currentHitPoints, Location currentLocation, Weapon currentWeapon, int maximumHitPoints, string name)
     {
