@@ -337,14 +337,12 @@ static class SuperAdventure
     public static void CompleteQuest(Quest quest, Player player)
     {
         player.CompleteQuest(quest);
-        player.CompletedQuests++; // Increment the quests completed counter
-
         int questsCompleted = player.CompletedQuests;
         int totalQuests = World.Quests.Count;
         int questsLeft = totalQuests - questsCompleted;
 
         Console.WriteLine($"Quest completed: {quest.Name}");
-        Console.WriteLine($"Quests completed: {questsCompleted}");
+        Console.WriteLine($"Quests completed: {player.CompletedQuests}");
         Console.WriteLine($"Quests left: {questsLeft}");
     }
 
