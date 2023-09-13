@@ -336,7 +336,6 @@ static class SuperAdventure
     }
     public static void CompleteQuest(Quest quest, Player player)
     {
-        player.CompleteQuest(quest);
         int questsCompleted = player.CompletedQuests;
         int totalQuests = World.Quests.Count;
         int questsLeft = totalQuests - questsCompleted;
