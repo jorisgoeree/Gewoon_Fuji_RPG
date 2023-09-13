@@ -11,6 +11,7 @@ public class Player
     public int MaximumHitPoints;
     public string Name;
     public int CompletedQuests { get; private set;}
+    public List<Quest> Quests { get; private set;}
     public Player(int currentHitPoints, Location currentLocation, Weapon currentWeapon, int maximumHitPoints, string name)
     {
         CurrentHitPoints = currentHitPoints;
@@ -19,6 +20,7 @@ public class Player
         MaximumHitPoints = maximumHitPoints;
         Name = name;
         PlayerInventory = new Inventory();
+        Quests = new List<Quest>();
     }
 
     public int Attack(Monster monster)
@@ -93,10 +95,10 @@ public class Player
 
     public void CompleteQuest(Quest quest)
     {
-        if (quest.QuestAccepted)
-        {
-            quest.QuestAccepted = false;
+        if (quest != null && !quest.IsCompleted)
+        {   
             CompletedQuests++;
+            quest.Complete();
         }
     }
 }
