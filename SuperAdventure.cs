@@ -141,6 +141,7 @@ static class SuperAdventure
         Console.WriteLine("You died!");
         Console.WriteLine("Press any key to continue");
         Console.ReadKey();
+        player.CurrentHitPoints = player.MaximumHitPoints;
         return fightWon = false;
     }
 
